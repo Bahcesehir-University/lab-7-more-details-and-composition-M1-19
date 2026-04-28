@@ -65,8 +65,7 @@ public:
 
 // Friend function implementation
 bool isSameSize(const Rectangle& r1, const Rectangle& r2) {
-    return (r1.getWidth() == r2.getWidth()) &&
-           (r1.getHeight() == r2.getHeight());
+    return r1.getArea()==r2.getArea();
 }
 
 
@@ -111,7 +110,7 @@ int main() {
     std::cout << "Const object value: " << cd1.getValue() << "\n";
     std::cout << "Const object doubled: " << cd1.constGetDouble() << "\n";
 
-    ConstDemo cd2(5);  // must NOT be const
+    ConstDemo cd2(5);
     cd2.doubleValue();
     std::cout << "Non-const object after double value: "
               << cd2.getValue() << "\n";
